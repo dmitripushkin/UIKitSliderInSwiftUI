@@ -8,9 +8,19 @@
 import SwiftUI
 
 struct ContentView: View {
+    @State private var sliderValue: Float = 50
+    
+    
     var body: some View {
-        Text("Hello, world!")
-            .padding()
+        HStack {
+            Text(String(format: "%.f", sliderValue))
+                .frame(width: 30)
+            UIKitSlider(value: $sliderValue)
+                .opacity(Double(sliderValue / 100))
+            Text(String(format: "%.f", sliderValue))
+                .frame(width: 30)
+        }
+        
     }
 }
 
