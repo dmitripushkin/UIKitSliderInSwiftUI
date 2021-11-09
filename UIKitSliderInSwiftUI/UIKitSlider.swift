@@ -10,13 +10,14 @@ import SwiftUI
 struct UIKitSlider: UIViewRepresentable {
     @Binding var value: Float
     
+    
     func makeUIView(context: Context) -> UISlider {
         let slider = UISlider()
+        slider.value = value
         slider.minimumValue = 0
         slider.maximumValue = 100
-        slider.thumbTintColor = .black
-        slider.tintColor = .orange
-        slider.value = value
+        slider.thumbTintColor = .darkGray
+        slider.tintColor = .gray
         
         slider.addTarget(
             context.coordinator,
@@ -54,3 +55,4 @@ struct UIKitSlider_Previews: PreviewProvider {
         UIKitSlider(value: .constant(50))
     }
 }
+
