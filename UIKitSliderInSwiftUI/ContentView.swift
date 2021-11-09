@@ -12,15 +12,17 @@ struct ContentView: View {
     
     
     var body: some View {
-        HStack {
-            Text(String(format: "%.f", sliderValue))
-                .frame(width: 30)
-            UIKitSlider(value: $sliderValue)
-                .opacity(Double(sliderValue / 100))
-            Text(String(format: "%.f", sliderValue))
-                .frame(width: 30)
+        VStack(spacing: 40) {
+            TaskQuestionLabelView(questionLabel: "100")
+            HStack {
+                Text("0")
+                UIKitSlider(value: $sliderValue)
+                    .opacity(Double(sliderValue / 100))
+                Text("100")
+            }
+            ButtonView(buttonTitle: "Проверь меня!", buttonAction: {})
+            ButtonView(buttonTitle: "Начать заново", buttonAction: {})
         }
-        
     }
 }
 
