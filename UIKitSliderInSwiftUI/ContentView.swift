@@ -9,11 +9,12 @@ import SwiftUI
 
 struct ContentView: View {
     @State private var sliderValue: Float = 50
+    @State private var valueForQuestion = Float.random(in: 0...100)
     
     
     var body: some View {
         VStack(spacing: 40) {
-            TaskQuestionLabelView(questionLabel: "100")
+            TaskQuestionLabelView(questionLabel: String(valueForQuestion))
             HStack {
                 Text("0")
                 UIKitSlider(value: $sliderValue)
@@ -23,6 +24,7 @@ struct ContentView: View {
             ButtonView(buttonTitle: "Проверь меня!", buttonAction: {})
             ButtonView(buttonTitle: "Начать заново", buttonAction: {})
         }
+        .padding()
     }
 }
 

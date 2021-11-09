@@ -11,10 +11,10 @@ struct ButtonView: View {
     let buttonTitle: String
     let buttonAction: () -> Void
     
-    
     var body: some View {
         Button(action: buttonAction) {
             Text(buttonTitle)
+                .font(.title2)
         }
     }
 }
